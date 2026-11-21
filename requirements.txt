@@ -1,0 +1,13 @@
+# PyTorch（CUDA 版）由 install.ps1 另外從 PyTorch 官方來源安裝：torch==2.11.0 torchaudio==2.11.0（cu128）
+transformers==5.23.0
+accelerate==1.16.0
+funasr==1.4.27
+soundfile==0.14.0
+librosa==1.0.1
+numpy==2.5.5
+opencc-python-reimplemented==0.1.7
+sounddevice==0.5.6
+keyboard==0.13.5
+pyperclip==1.11.0
+pystray==0.19.5
+pillow==13.0.0

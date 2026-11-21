@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+config.json
+glossary.txt
+outputs/
+assets/icon-preview.png
+PROJECT.md
