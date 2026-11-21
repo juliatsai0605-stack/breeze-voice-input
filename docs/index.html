@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微風語音輸入</title>
+<meta name="description" content="Windows 本機語音輸入：按住熱鍵說話，放開就打進任何程式。台灣華語、中英夾雜都聽得懂，錄音不存檔。">
+<meta property="og:title" content="微風語音輸入｜Windows 本機台灣華語語音打字">
+<meta property="og:description" content="按住右 Ctrl 說話，放開就打字。免費開源，全程在你自己的電腦上執行。">
+<meta property="og:image" content="icon.png">
+<link rel="icon" href="icon.png">
+<style>
+:root{--bg:#f7fbfa;--card:#fff;--ink:#17312c;--muted:#5b716c;--accent:#14a38b;--accent-ink:#fff;--line:#dbe8e5}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1a18;--card:#16241f;--ink:#e6f2ef;--muted:#9bb3ad;--accent:#2cc4a8;--accent-ink:#06201b;--line:#25403a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header{text-align:center;padding:56px 0 24px}
+header img{width:96px;height:96px}
+h1{font-size:clamp(28px,6vw,42px);margin:12px 0 4px}
+.lead{color:var(--muted);font-size:18px;margin:0 auto 24px;max-width:36em}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:700;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.video{position:relative;aspect-ratio:16/9;margin:32px 0;border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted)}
+h2{font-size:24px;margin:40px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card b{display:block;font-size:18px;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden}
+td{padding:10px 14px;border-bottom:1px solid var(--line)}
+kbd{background:var(--bg);border:1px solid var(--line);border-bottom-width:3px;border-radius:6px;padding:1px 8px;font-family:inherit;font-weight:700}
+ol li{margin:8px 0}
+code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 6px;word-break:break-all}
+.note{color:var(--muted);font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:48px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <img src="icon.png" alt="微風語音輸入圖示">
+  <h1>微風語音輸入</h1>
+  <p class="lead">按住熱鍵說話，放開就打進任何程式。<br>台灣華語、中英夾雜都聽得懂，錄音不存檔，全程在你自己的電腦上執行。</p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/juliatsai0605-stack/breeze-voice-input/archive/refs/heads/main.zip">免費下載</a>
+    <a class="btn ghost" href="https://github.com/juliatsai0605-stack/breeze-voice-input">GitHub 原始碼</a>
+  </div>
+</header>
+
+<!-- 影片上傳 YouTube 後，把 VIDEO_ID 換成影片 ID，並刪掉 .ph 那一行 -->
+<div class="video">
+  <div class="ph">介紹影片即將上線 🎬</div>
+  <!-- <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="微風語音輸入介紹" allowfullscreen></iframe> -->
+</div>
+
+<h2>為什麼做這個？</h2>
+<p>Windows 內建語音輸入在台灣華語、專有名詞、中英夾雜時常常聽錯，有時還會冒出沒講過的「謝謝收看」。所以我把台灣華語模型、自動標點、防幻覺和個人名詞表組在一起，做成一個按著就能講的小工具。</p>
+
+<div class="grid">
+  <div class="card"><b>🇹🇼 聽得懂台灣華語</b>用聯發科 Breeze-ASR-25，中英夾雜也行。</div>
+  <div class="card"><b>🔒 錄音不存檔</b>聲音只在記憶體裡，辨識完就丟掉，不上雲端。</div>
+  <div class="card"><b>✏️ 用說的改錯字</b>選取錯字、說出正確的詞，下次自動更正。</div>
+</div>
+
+<h2>五個熱鍵</h2>
+<table>
+  <tr><td>按住 <kbd>右 Ctrl</kbd> 說話</td><td>照你說的打出來（繁體、有標點）</td></tr>
+  <tr><td>按住 <kbd>F9</kbd> 說話</td><td>AI 整理成通順的書面語</td></tr>
+  <tr><td>按住 <kbd>F7</kbd> 說話</td><td>說中文，打出翻譯（預設英文）</td></tr>
+  <tr><td>按一下 <kbd>F8</kbd></td><td>長段口述，停頓幾秒自動結束</td></tr>
+  <tr><td>選取錯字按 <kbd>F10</kbd></td><td>說出正確的詞，直接改掉並記住</td></tr>
+</table>
+<p class="note">F9 整理、F7 翻譯需另裝本機 AI（Ollama 或 LM Studio），也可選 Claude（會送到雲端）。</p>
+
+<h2>30 秒上手</h2>
+<ol>
+  <li>點上面「免費下載」，解壓縮到簡單的路徑，例如 <code>D:\BreezeVoiceInput</code></li>
+  <li>在資料夾按右鍵「在終端機中開啟」，貼上：<br><code>powershell -ExecutionPolicy Bypass -File .\install.ps1</code></li>
+  <li>雙擊桌面「微風語音輸入」，聽到「嗶」一聲就能開始講話打字</li>
+</ol>
+<p class="note">需求：Windows 10／11、NVIDIA 顯示卡（建議 8GB 以上顯示記憶體）、Python 3.10～3.12、約 4GB 空間（第一次啟動自動下載模型）。</p>
+
+<h2>用起來怎麼樣？</h2>
+<p>歡迎到 <a href="https://github.com/juliatsai0605-stack/breeze-voice-input/issues">GitHub Issues</a> 跟我說哪裡不好用、哪個詞一直聽錯，完全沒壓力～</p>
+
+<footer>MIT 授權・模型與套件依各自授權・感謝 BreezeTyping、VoxProse 等專案的啟發</footer>
+</div>
+</body>
+</html>
